@@ -13,7 +13,8 @@ public slots:
     void move();
 private:
     enum Direction{UP,LEFT,RIGHT,DOWN};
-    Direction direction;
+    Direction currentDirection;
+    Direction previousDirection;
 };
 
 #endif // MYRECT_H
