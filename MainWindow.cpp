@@ -1,9 +1,5 @@
 #include "MainWindow.h"
 #include "MyRect.h"
-#include <QGraphicsScene>
-#include <QGraphicsView>
-#include <QGraphicsRectItem>
-#include <QTimer>
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent){
 
@@ -19,8 +15,9 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent){
     scene->addItem(wall);
 
     //"Snake"
-    MyRect* item = new MyRect();
+    MyRect* item = new MyRect(*scene);
     item->setRect(0, 0, 30, 30);
+    item->setPos(90, 0);
     item->setFlag(QGraphicsItem::ItemIsFocusable);
     item->setFocus();
     scene->addItem(item);
@@ -28,6 +25,6 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent){
     //Timer which runs the logic 4 times each second
     QTimer* timer = new QTimer();
     connect(timer, SIGNAL(timeout()), item, SLOT(move()));
-    timer->start(250);
+    timer->start(100);
 }
 MainWindow::~MainWindow(){}

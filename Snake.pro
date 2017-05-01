@@ -26,7 +26,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES +=\
         MainWindow.cpp \
     Main.cpp \
-    MyRect.cpp
+    MyRect.cpp \
+    Apple.cpp
 
 HEADERS  += MainWindow.h \
-    MyRect.h
+    MyRect.h \
+    Apple.h
+
+DISTFILES +=
+
+RESOURCES += \
+    resources.qrc
