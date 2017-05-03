@@ -2,12 +2,10 @@
 #define APPLE_H
 
 #include <QGraphicsPixmapItem>
-#include <QGraphicsItem>
-#include <QObject>
 
-class Apple: public QObject, public QGraphicsPixmapItem{
+class Apple: public QGraphicsPixmapItem{
 public:
-    Apple(QGraphicsItem* parent=0);
+    Apple();
 };
 
 #endif // APPLE_H

@@ -27,11 +27,15 @@ SOURCES +=\
         MainWindow.cpp \
     Main.cpp \
     MyRect.cpp \
-    Apple.cpp
+    Apple.cpp \
+    Game.cpp \
+    Snake.cpp
 
 HEADERS  += MainWindow.h \
     MyRect.h \
-    Apple.h
+    Apple.h \
+    Game.h \
+    Snake.h
 
 DISTFILES +=
 
