@@ -26,13 +26,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES +=\
         MainWindow.cpp \
     Main.cpp \
-    MyRect.cpp \
     Apple.cpp \
     Game.cpp \
     Snake.cpp
 
 HEADERS  += MainWindow.h \
-    MyRect.h \
     Apple.h \
     Game.h \
     Snake.h

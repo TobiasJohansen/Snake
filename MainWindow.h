@@ -6,11 +6,14 @@
 #include <QGraphicsView>
 #include "Game.h"
 
+//"Forward declaration", to prevent circular dependency
+class Game;
+
 class MainWindow : public QMainWindow{
     Q_OBJECT
 public:
     MainWindow(QWidget* parent = 0);
-    ~MainWindow();
+    void gameOver(int);
 private:
     QGraphicsScene* scene;
     QGraphicsView* view;

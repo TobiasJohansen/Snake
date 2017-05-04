@@ -1,7 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include <QWidget>
+#include "MainWindow.h"
 #include <QObject>
 #include <QGraphicsScene>
 #include "Snake.h"
@@ -10,19 +10,26 @@
 #include <QTimer>
 #include <QMessageBox>
 
+//"Forward declaration", to prevent circular dependency
+class MainWindow;
+
 class Game : public QObject{
     Q_OBJECT
 public:
-    Game(QGraphicsScene&, QWidget*);
+    Game(QGraphicsScene&, MainWindow*);
 public slots:
     void update();
 private:
     QGraphicsScene& scene;
-    QWidget* widget;
+    MainWindow* mainWindow;
     Snake* snake;
     Apple* apple;
+    QGraphicsTextItem* textItem;
+    int score = 0;
     QTimer* timer;
     void moveSnake();
     void moveApple();
+    void updateScore();
+    void gameOver();
 };
 #endif // GAME_H

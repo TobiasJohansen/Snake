@@ -1,8 +1,8 @@
 #ifndef SNAKE_H
 #define SNAKE_H
 
-#include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
+#include <QGraphicsScene>
 #include <vector>
 #include <QKeyEvent>
 
@@ -12,7 +12,7 @@ public:
     void move();
     void grow();
     bool willCollide(int, int);
-    enum Direction {UP,LEFT,RIGHT,DOWN};
+    enum Direction {NONE,UP,LEFT,RIGHT,DOWN};
     Direction getCurrentDirection();
     Direction getPreviousDirection();
     void setPreviousDirection(Direction);
@@ -22,7 +22,6 @@ private:
     Direction currentDirection;
     Direction previousDirection;
     std::vector<QGraphicsPixmapItem*> tail;
-    int tailSize = 0;
     void grow(int, int);
     void keyPressEvent(QKeyEvent* event);
 };
